@@ -51,7 +51,7 @@ namespace CA1_WebFrameWorks
                 }
 
                 Console.WriteLine("Enter Number");
-                num = Convert.ToInt32(array[0]);
+                num = Convert.ToInt32(Console.ReadLine());
 
                 switch(num)
                 {
