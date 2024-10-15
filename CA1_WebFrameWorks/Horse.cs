@@ -52,7 +52,6 @@ namespace CA1_WebFrameWorks
         public string Name { get => name; set => name = value; }
         public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
         public int HorseID { get => horseID; set => horseID = value; }
-        public static List<int> IdCount { get => idCount; set => idCount = value; }
 
         public override string ToString()
         {

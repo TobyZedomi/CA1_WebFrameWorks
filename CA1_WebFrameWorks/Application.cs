@@ -12,6 +12,16 @@ namespace CA1_WebFrameWorks
 
         static void Main(string[] args)
         { 
+
+          //  HorseCollection horse4 = new HorseCollection();
+          //  horse4.add();
+
+           
+            
+         //   Console.WriteLine("");
+
+
+            
         
             List<Horse> horse1 = new List<Horse>();
             horse1.Add(new Horse("Horse1",DateTime.Now));
@@ -25,8 +35,10 @@ namespace CA1_WebFrameWorks
 
             EventSchedule comp = new EventSchedule();
 
+           
+
             comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", DateTime.Now, horse1, "Royal Ascot", "Ireland", 5, 5, DateTime.Now, 5));
-            comp.addEvent(new HarnessRacing("r", "five", horse2, "Dubai World Cup", "Ireland", 5, 5, DateTime.Now, 5));
+            comp.addEvent(new HarnessRacing("r", "five", getHorse("horseFile.txt"), "Dubai World Cup", "Ireland", 5, 5, DateTime.Now, 5));
             comp.addEvent(new JumpRacing("High", "Hurdle", 5, horse3, "Ebor Festival", "Ireland", 5, 5, DateTime.Now, 5));
 
             int num = 0;
@@ -169,8 +181,33 @@ namespace CA1_WebFrameWorks
 
             }
 
+            
 
 
+
+        }
+
+        // Refernece for this 
+        public static List<Horse> getHorse(string fileName)
+        {
+            //StreamReader sr = new StreamReader(@"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\horseFile.txt");
+
+            string filePath = @"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\" +fileName;
+
+            List<string> list = new List<string>();
+            List<Horse> h1 = new List<Horse>();
+
+            list = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in list)
+            {
+
+                string[] horses = line.Split(' ');
+                Horse horse = new Horse(horses[0], DateTime.Parse(horses[1]));
+                h1.Add(horse);
+            }
+
+            return h1;
 
 
         }
