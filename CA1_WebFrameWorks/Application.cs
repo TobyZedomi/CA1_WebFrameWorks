@@ -39,7 +39,7 @@ namespace CA1_WebFrameWorks
 
                 array[0] = "1. Get All Events";
                 array[1] = "2. Get All Events From Name";
-                array[2] = "3. Get All Horses From Event Name";
+                array[2] = "3. Get All Horses From Event Name for particular Race";
                 array[3] = "4. Get All Races From Race Name";
                 array[4] = "5. To Exit";
                 Console.WriteLine("");
@@ -83,65 +83,68 @@ namespace CA1_WebFrameWorks
 
                     case 3:
 
-                        int num2 = 0;
 
                         Boolean result1 = false;
 
                         while (!result1)
                         {
-                            string[] array1 = new string[5];
+                            
 
-                            array1[0] = "1. Chooose EnduranceRaing for Event";
-                            array1[1] = "2. Choose HarnessRacing for Event";
-                            array1[2] = "3. Choose JumpRacing for Event";
-                            array1[4] = "4. To Exit";
-                            Console.WriteLine("");
+                            Console.WriteLine("Enter Race Name you want to attend: ");
+                            string raceName1 = Console.ReadLine();
 
-                            switch(num2)
+                            if (raceName1.Equals("Endurance Raing"))
+                            {
+                                Console.WriteLine("Enter Event Name: ");
+                                string eventName2 = Console.ReadLine();
+
+                                List<Horse> horse22 = comp.getHorseFromEventNameInEnduranceRacing(eventName2);
+
+                                foreach (Horse h in horse22)
+                                {
+                                    Console.WriteLine(h);
+                                }
+
+                                result1 = true;
+
+                            }
+                            else if (raceName1.Equals("Harness Racing"))
                             {
 
-                                case 1:
-                                    Console.WriteLine("Enter Event Name: ");
-                                    string eventName2 = Console.ReadLine(); 
+                                Console.WriteLine("Enter Event Name: ");
+                                string eventName1 = Console.ReadLine();
 
-                                    List<Horse> horse22 = comp.getHorseFromEventNameInEnduranceRacing(eventName2);
+                                List<Horse> horse11 = comp.getHorseFromEventNameInHarnessRacing(eventName1);
 
-                                    foreach (Horse h in horse22)
-                                    {
-                                        Console.WriteLine(h);
-                                    }
+                                foreach (Horse h in horse11)
+                                {
+                                    Console.WriteLine(h);
+                                }
+                                result1 = true;
+                            }
+                            else if (raceName1.Equals("Endurance Racing"))
+                            {
 
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter Event Name: ");
-                                    string eventName1 = Console.ReadLine();
 
-                                    List<Horse> horse11 = comp.getHorseFromEventNameInHarnessRacing(eventName1);
+                                Console.WriteLine("Enter Event Name: ");
+                                string eventName = Console.ReadLine();
 
-                                    foreach (Horse h in horse11)
-                                    {
-                                        Console.WriteLine(h);
-                                    }
+                                List<Horse> horse = comp.getHorseFromEventNameInEnduranceRacing(eventName);
 
-                                    break; 
-                                case 3:
-
-                                    Console.WriteLine("Enter Event Name: ");
-                                    string eventName = Console.ReadLine();  
-
-                                    List<Horse> horse = comp.getHorseFromEventNameInEnduranceRacing(eventName);
-
-                                    foreach (Horse h in horse)
-                                    {
-                                        Console.WriteLine(h);
-                                    }
-
-                                    break; 
-                                case 4:
-                                    break;
+                                foreach (Horse h in horse)
+                                {
+                                    Console.WriteLine(h);
+                                }
+                                result1 = true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("The only races available are Endurace, Jumping and Harness Racing, Enter Again please ");
+                                result1 = false;
                             }
 
-                        }
+                                    
+                            }
 
                         break;
 
