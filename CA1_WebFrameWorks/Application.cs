@@ -57,13 +57,14 @@ namespace CA1_WebFrameWorks
 
             while (!result)
             {
-                string[] array = new string[5];
+                string[] array = new string[6];
 
                 array[0] = "1. Get All Events";
                 array[1] = "2. Get All Events From Name";
                 array[2] = "3. Get All Horses From Event Name for particular Race";
                 array[3] = "4. Get All Races From Race Name";
-                array[4] = "5. To Exit";
+                array[4] = "5. Add a horse to the list";
+                array[5] = "6. To Exit";
                 Console.WriteLine("");
 
 
@@ -185,6 +186,45 @@ namespace CA1_WebFrameWorks
                         break;
 
                     case 5:
+
+                       
+
+                        Boolean repeat = false;
+
+                        while (!repeat)
+                        {
+
+                            Console.WriteLine("Enter horse file: ");
+                            string horseFile = Console.ReadLine();
+
+                            Console.WriteLine("Enter which race you want the horse to be added to ");
+                            string race = Console.ReadLine();
+                            
+                                if (race.Equals("Endurance Racing"))
+                                {
+                                    writeHorse(horseFile);
+                                    repeat = true;
+                                }
+                                else if (race.Equals("Jump Racing"))
+                                {
+                                    writeHorse(horseFile);
+                                    repeat = true;
+                                }
+                                else if (race.Equals("Harness Racing"))
+                                {
+                                    writeHorse(horseFile);
+                                    repeat = true;
+                                }
+                                else
+                                {
+                                    Console.Write("The only races available are Endurace, Jumping and Harness Racing, Enter Again please");
+                                    repeat = false;
+                                }
+                            
+                        }
+                        
+                        break;
+                    case 6:
                         break;
                 }
 
