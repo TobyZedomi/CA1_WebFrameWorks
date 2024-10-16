@@ -33,30 +33,6 @@ namespace CA1_WebFrameWorks
           events.Add(e);
         }
 
-        /*
-        // addEevnt
-
-        public void add(string fileName) 
-        {
-            StreamReader output = new StreamReader("invalidEvent");
-
-
-            using(StreamReader input = new StreamReader(fileName))
-            {
-
-        string name, location;
-        double numberOfRaces, distance;
-        DateTime startTime;
-        double winningPrice;
-
-
-                string line = "";
-                string[] tokens = new string[0];
-
-            }
-
-        }
-        */
 
         public List<Event> getAllEvents()
         {

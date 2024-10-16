@@ -11,17 +11,18 @@ namespace CA1_WebFrameWorks
     {
 
         static void Main(string[] args)
-        { 
+        {
 
-          //  HorseCollection horse4 = new HorseCollection();
-          //  horse4.add();
-
-           
-            
-         //   Console.WriteLine("");
+            //  HorseCollection horse4 = new HorseCollection();
+            //  horse4.add();
 
 
-            
+
+            //   Console.WriteLine("");
+
+            writeHorse("horseFile.txt");
+
+            /*
         
             List<Horse> horse1 = new List<Horse>();
             horse1.Add(new Horse("Horse1",DateTime.Now));
@@ -180,7 +181,7 @@ namespace CA1_WebFrameWorks
 
 
             }
-
+            */
             
 
 
@@ -211,6 +212,49 @@ namespace CA1_WebFrameWorks
 
 
         }
+
+        public static void writeHorse(string fileName)
+        {
+            //StreamReader sr = new StreamReader(@"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\horseFile.txt");
+
+            string filePath = @"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\" + fileName;
+
+            StreamWriter write = File.AppendText(filePath);
+            List<string> list = new List<string>();
+            List<Horse> h1 = new List<Horse>();
+
+            
+            
+
+                Console.WriteLine("Enter horse name");
+                string name = Console.ReadLine();
+
+
+                Console.WriteLine("Enter month: ");
+                int month = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter a day: ");
+                int day = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter a year: ");
+                int year = int.Parse(Console.ReadLine());
+
+                DateTime birth = new DateTime(year, month, day);
+
+                Horse horse = new Horse(name, birth);
+                h1.Add(horse);
+
+            foreach (Horse h in h1)
+            {
+                write.WriteLine(h);
+            }
+
+          
+                write.Close();
+
+
+        }
+
 
     }
 }
