@@ -116,7 +116,7 @@ namespace CA1_WebFrameWorks
                             Console.WriteLine("Enter Race Name you want to attend: ");
                             string raceName1 = Console.ReadLine();
 
-                            if (raceName1.Equals("Endurance Raing"))
+                            if (raceName1.Equals("Endurance Racing"))
                             {
                                 Console.WriteLine("Enter Event Name: ");
                                 string eventName2 = Console.ReadLine();

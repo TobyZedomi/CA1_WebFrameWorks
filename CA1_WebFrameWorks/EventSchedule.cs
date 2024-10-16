@@ -96,7 +96,11 @@ namespace CA1_WebFrameWorks
                 if (e is EnduranceRacing && e.Name.Equals(name))
                 {
                     List<Horse> horseList = (e as EnduranceRacing).HorseList;
-                    result.Add((Horse)horseList[0]);
+                    foreach (Horse horse in horseList)
+                    {
+                        result.Add(horse);
+                    }
+                  
                 }
 
             }
@@ -117,7 +121,10 @@ namespace CA1_WebFrameWorks
                 if (e is JumpRacing && e.Name.Equals(name))
                 {
                     List<Horse> horseList = (e as JumpRacing).HorseList;
-                    result.Add((Horse)horseList[0]);
+                    foreach (Horse horse in horseList)
+                    {
+                        result.Add(horse);
+                    }
                 }
 
             }
@@ -137,7 +144,10 @@ namespace CA1_WebFrameWorks
                 if (e is HarnessRacing && e.Name.Equals(name))
                 {
                     List<Horse> horseList = (e as HarnessRacing).HorseList;
-                    result.Add((Horse)horseList[0]);
+                    foreach (Horse horse in horseList)
+                    {
+                        result.Add(horse);
+                    }
                 }
 
             }
