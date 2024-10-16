@@ -130,7 +130,7 @@ namespace CA1_WebFrameWorks.Tests
 
 
         [TestMethod]
-        public void getRacesFromEventName()
+        public void getAllEventRaces()
         {
             List<Horse> horseList1 = new List<Horse>();
             horseList1.Add(new Horse("Toby", new DateTime(16 / 10 / 2024)));
@@ -170,9 +170,9 @@ namespace CA1_WebFrameWorks.Tests
 
             EventSchedule comp = new EventSchedule();
 
-           // comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-           /// comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-           // comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
 
             comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList2, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
             comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList2, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
@@ -185,16 +185,272 @@ namespace CA1_WebFrameWorks.Tests
                 
             List<Event> events = comp.getAllEvents();
 
-            for(int i = 0;i < events.Count; i++)
+            for (int i = 0; i < events.Count; i++)
             {
-                
-                Assert.AreEqual(events[i], startingData[i]);
-               
+                Assert.AreEqual(events[i].Name, startingData[i].Name);
+                Assert.AreEqual(events[i].Location, startingData[i].Location);
+                Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
+                Assert.AreEqual(events[i].Distance, startingData[i].Distance);
+                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
             }
 
 
         }
 
+        [TestMethod]
+        public void getRacesFromEventRaceTypeEnduranceRacing()
+        {
+
+            List<Horse> horseList1 = new List<Horse>();
+            horseList1.Add(new Horse("Toby", new DateTime(16 / 10 / 2024)));
+            horseList1.Add(new Horse("John", new DateTime(10 / 12 / 2024)));
+            horseList1.Add(new Horse("Rob", new DateTime(08 / 09 / 2022)));
+
+
+            List<Event> startingData = new List<Event>();
+
+
+            startingData.Add(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
+            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            startingData.Add(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+
+
+            EventSchedule comp = new EventSchedule();
+
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+
+
+            List<Event> events = comp.getRacesFromEvent(typeof(EnduranceRacing));
+
+            /// test size
+
+            Assert.AreEqual(events.Count, startingData.Count);
+
+            // test if values are the same
+
+            for (int i = 0; i < events.Count;i++)
+                {
+                List<Horse> horseList = (events[i] as EnduranceRacing).HorseList;
+                List<Horse> horseList2 = (startingData[i] as EnduranceRacing).HorseList;
+
+                for (int j = 0; i < startingData.Count;i++)
+                    {
+                    Assert.AreEqual(horseList[i].Name, horseList2[i].Name);
+                    Assert.AreEqual(horseList[i].DateOfBirth, horseList2[i].DateOfBirth);
+                }
+                }
+
+
+                for (int i = 0;i < events.Count;i++)
+                {
+                 Assert.AreEqual(events[i].Name, startingData[i].Name);
+                Assert.AreEqual(events[i].Location, startingData[i].Location);
+                Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
+                Assert.AreEqual(events[i].Distance, startingData[i].Distance);
+                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
+            }
+
+      
+
+        }
+
+        [TestMethod]
+        public void getRacesFromEventRaceTypeHarnessRacing()
+        {
+
+            List<Horse> horseList1 = new List<Horse>();
+            horseList1.Add(new Horse("Toby", new DateTime(16 / 10 / 2024)));
+            horseList1.Add(new Horse("John", new DateTime(10 / 12 / 2024)));
+            horseList1.Add(new Horse("Rob", new DateTime(08 / 09 / 2022)));
+
+
+            List<Event> startingData = new List<Event>();
+
+            startingData.Add(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
+            startingData.Add(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
+            startingData.Add(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+
+            EventSchedule comp = new EventSchedule();
+
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+
+
+            List<Event> events = comp.getRacesFromEvent(typeof(HarnessRacing));
+
+            /// test size
+
+            Assert.AreEqual(events.Count, startingData.Count);
+
+            // test if values are the same
+
+            for (int i = 0; i < events.Count; i++)
+            {
+                List<Horse> horseList = (events[i] as HarnessRacing).HorseList;
+                List<Horse> horseList2 = (startingData[i] as HarnessRacing).HorseList;
+
+                for (int j = 0; i < events.Count; i++)
+                {
+                    Assert.AreEqual(horseList[i].Name, horseList2[i].Name);
+                    Assert.AreEqual(horseList[i].DateOfBirth, horseList2[i].DateOfBirth);
+                }
+            }
+
+
+            for (int i = 0; i < events.Count; i++)
+            {
+                Assert.AreEqual(events[i].Name, startingData[i].Name);
+                Assert.AreEqual(events[i].Location, startingData[i].Location);
+                Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
+                Assert.AreEqual(events[i].Distance, startingData[i].Distance);
+                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
+            }
+
+
+
+        }
+
+
+        [TestMethod]
+        public void getRacesFromEventRaceTypeJumpRacing()
+        {
+
+            List<Horse> horseList1 = new List<Horse>();
+            horseList1.Add(new Horse("Toby", new DateTime(16 / 10 / 2024)));
+            horseList1.Add(new Horse("John", new DateTime(10 / 12 / 2024)));
+            horseList1.Add(new Horse("Rob", new DateTime(08 / 09 / 2022)));
+
+
+            List<Event> startingData = new List<Event>();
+
+            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+            startingData.Add(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
+            startingData.Add(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+
+
+            EventSchedule comp = new EventSchedule();
+
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+
+
+            List<Event> events = comp.getRacesFromEvent(typeof(JumpRacing));
+
+            /// test size
+
+            Assert.AreEqual(events.Count, startingData.Count);
+
+            // test if values are the same 
+
+            for (int i = 0; i < events.Count; i++)
+            {
+                List<Horse> horseList = (events[i] as JumpRacing).HorseList;
+                List<Horse> horseList2 = (startingData[i] as JumpRacing).HorseList;
+
+                for (int j = 0; i < events.Count; i++)
+                {
+                    Assert.AreEqual(horseList[i].Name, horseList2[i].Name);
+                    Assert.AreEqual(horseList[i].DateOfBirth, horseList2[i].DateOfBirth);
+                }
+            }
+
+
+            for (int i = 0; i < events.Count; i++)
+            {
+                Assert.AreEqual(events[i].Name, startingData[i].Name);
+                Assert.AreEqual(events[i].Location, startingData[i].Location);
+                Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
+                Assert.AreEqual(events[i].Distance, startingData[i].Distance);
+                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
+            }
+
+
+
+        }
+
+
+        [TestMethod]
+        public void getRaceFromEventName()
+        {
+
+            List<Horse> horseList1 = new List<Horse>();
+            horseList1.Add(new Horse("Toby", new DateTime(16 / 10 / 2024)));
+            horseList1.Add(new Horse("John", new DateTime(10 / 12 / 2024)));
+            horseList1.Add(new Horse("Rob", new DateTime(08 / 09 / 2022)));
+
+           
+            List<Event> startingData = new List<Event>();
+
+
+            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            startingData.Add(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
+            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+   
+
+
+
+            EventSchedule comp = new EventSchedule();
+
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+
+
+            List<Event> events = comp.getRacesFromEventName("Dubai World Cup");
+
+
+            /// test size
+
+            Assert.AreEqual(events.Count, startingData.Count);
+
+
+
+            for (int i = 0; i < events.Count; i++)
+            {
+                Assert.AreEqual(events[i].Name, startingData[i].Name);
+            
+            }
+        }
 
     }
 }

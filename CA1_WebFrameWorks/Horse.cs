@@ -11,7 +11,7 @@ namespace CA1_WebFrameWorks
         private string name;
         private DateTime dateOfBirth;
         private int horseID;
-        private static int idCount = 1000;
+        private static List<int> idCount = new List<int>();
 
 
         // Parameterized Constructor
@@ -21,8 +21,14 @@ namespace CA1_WebFrameWorks
             this.name = name;
             this.dateOfBirth = dateOfBirth;
 
-            horseID = idCount;
-            idCount++;
+            Random rg = new Random();
+            int num;
+            do
+            {
+                num = (int)rg.NextInt64(0, int.MaxValue);
+            } while (idCount.Contains(num));
+            this.horseID = num;
+            idCount.Add(num);
         }
 
         // Deafult Constuctor
@@ -32,8 +38,14 @@ namespace CA1_WebFrameWorks
             this.name = "Toby";
             this.dateOfBirth = new DateTime(2003, 4, 5);
 
-            horseID = idCount;
-            idCount++;
+            Random rg = new Random();
+            int num;
+            do
+            {
+                num = (int)rg.NextInt64(0, int.MaxValue);
+            } while (idCount.Contains(num));
+            this.horseID = num;
+            idCount.Add(num);
         }
 
         // getters and setters
