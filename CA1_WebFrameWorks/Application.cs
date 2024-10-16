@@ -20,9 +20,9 @@ namespace CA1_WebFrameWorks
 
             //   Console.WriteLine("");
 
-            writeHorse("horseFile.txt");
+          //  writeHorse("horseFile.txt");
 
-            /*
+            
         
             List<Horse> horse1 = new List<Horse>();
             horse1.Add(new Horse("Horse1",DateTime.Now));
@@ -181,7 +181,7 @@ namespace CA1_WebFrameWorks
 
 
             }
-            */
+            
             
 
 
@@ -213,6 +213,7 @@ namespace CA1_WebFrameWorks
 
         }
 
+        // add Horse
         public static void writeHorse(string fileName)
         {
             //StreamReader sr = new StreamReader(@"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\horseFile.txt");
@@ -220,11 +221,8 @@ namespace CA1_WebFrameWorks
             string filePath = @"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\" + fileName;
 
             StreamWriter write = File.AppendText(filePath);
-            List<string> list = new List<string>();
-            List<Horse> h1 = new List<Horse>();
-
-            
-            
+           // List<string> list = new List<string>();
+           // List<Horse> h1 = new List<Horse>();
 
                 Console.WriteLine("Enter horse name");
                 string name = Console.ReadLine();
@@ -241,18 +239,13 @@ namespace CA1_WebFrameWorks
 
                 DateTime birth = new DateTime(year, month, day);
 
-                Horse horse = new Horse(name, birth);
-                h1.Add(horse);
-
-            foreach (Horse h in h1)
-            {
-                write.WriteLine(h);
-            }
+            //Horse horse = new Horse(name, birth);
+            //    h1.Add(horse);
 
           
+
+            write.WriteLine(name + " " +birth);
                 write.Close();
-
-
         }
 
 
