@@ -149,29 +149,15 @@ namespace CA1_WebFrameWorks
                             if (users[i].Name.Equals(nameOfUser) && users[i].Password.Equals(passwordUser))
                             {
                                 Console.WriteLine("Login was successful");
-                                repeat3 = true;
+                                repeat3 = false;
                             }
                             else
                             {
                                 Console.WriteLine("Try login again");
-                                repeat3 = false;
+                                repeat3 = true;
                             }
                         }
                         
-                        /*
-                    User u = new User(nameOfUser, passwordUser, "@gmail.com",1);
-
-                        if (users.Contains(u) )
-                        {
-                            Console.WriteLine("Login was successful");
-                            repeat3 = false;
-                        }
-                        else
-                        {
-                            repeat3 = true;
-                        }
-                        */
-
                     }
 
                     result2 = true;
@@ -317,14 +303,53 @@ namespace CA1_WebFrameWorks
                         break;
 
                     case 4:
-                        Console.WriteLine("Enter race name: ");
-                        Type raceName = comp.GetType();
+                        
 
-                        List<Event> events11 = comp.getRacesFromEvent(raceName);
+                        Boolean repeat6 = false;
 
-                        foreach (Event e in events11)
+                        while (!repeat6)
                         {
-                            Console.WriteLine(e);
+
+                            Console.WriteLine("Enter which race you want the horse to be added to ");
+                            string race = Console.ReadLine();
+
+                            if (race.Equals("Endurance Racing"))
+                            {
+                                List<Event> events11 = comp.getRacesFromEvent(typeof(EnduranceRacing));
+
+                                foreach (Event e in events11)
+                                {
+                                    Console.WriteLine(e);
+                                }
+
+                                repeat6 = true;
+                            }
+                            else if (race.Equals("Jump Racing"))
+                            {
+                                List<Event> events11 = comp.getRacesFromEvent(typeof(JumpRacing));
+
+                                foreach (Event e in events11)
+                                {
+                                    Console.WriteLine(e);
+                                }
+                                repeat6 = true;
+                            }
+                            else if (race.Equals("Harness Racing"))
+                            {
+                                List<Event> events11 = comp.getRacesFromEvent(typeof(HarnessRacing));
+
+                                foreach (Event e in events11)
+                                {
+                                    Console.WriteLine(e);
+                                }
+                                repeat6 = true;
+                            }
+                            else
+                            {
+                                Console.Write("The only races available are Endurace, Jumping and Harness Racing, Enter Again please");
+                                repeat6 = false;
+                            }
+
                         }
                         Console.WriteLine();
 
@@ -339,25 +364,24 @@ namespace CA1_WebFrameWorks
                         while (!repeat)
                         {
 
-                            Console.WriteLine("Enter horse file: ");
-                            string horseFile = Console.ReadLine();
+                           
 
                             Console.WriteLine("Enter which race you want the horse to be added to ");
                             string race = Console.ReadLine();
                             
                                 if (race.Equals("Endurance Racing"))
                                 {
-                                    writeHorse(horseFile);
+                                    writeHorse("horseFileEndure.txt");
                                     repeat = true;
                                 }
                                 else if (race.Equals("Jump Racing"))
                                 {
-                                    writeHorse(horseFile);
+                                    writeHorse("horseFileJump");
                                     repeat = true;
                                 }
                                 else if (race.Equals("Harness Racing"))
                                 {
-                                    writeHorse(horseFile);
+                                    writeHorse("horseFileHarness");
                                     repeat = true;
                                 }
                                 else
