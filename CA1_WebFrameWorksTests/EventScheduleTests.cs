@@ -30,7 +30,7 @@ namespace CA1_WebFrameWorks.Tests
 
 
             EventSchedule comp = new EventSchedule();
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", DateTime.Now, expectedData, "Dubai World Cup", "Dubai", 7, 8, DateTime.Now, 100));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", DateTime.Now, "Dubai World Cup", "Dubai", 7, "8 miles", DateTime.Now, 100, expectedData));
 
             // execute the method to get the horseList in Endurance Racing
 
@@ -70,7 +70,7 @@ namespace CA1_WebFrameWorks.Tests
 
 
             EventSchedule comp = new EventSchedule();
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, expectedData, "Dubai World Cup", "Dubai", 15, 2.5, DateTime.Now, 40));
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", DateTime.Now, 40, expectedData));
             // execute the method to get the horseList in Endurance Racing
 
             List<Horse> horseList = comp.getHorseFromEventNameInJumpRacing("Dubai World Cup");
@@ -107,7 +107,7 @@ namespace CA1_WebFrameWorks.Tests
 
 
             EventSchedule comp = new EventSchedule();
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", expectedData, "Dubai World Cup", "Dubai", 5, 1.5, DateTime.Now, 70));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", DateTime.Now, 70, expectedData));
 
             // execute the method to get the horseList in Endurance Racing
 
@@ -153,34 +153,34 @@ namespace CA1_WebFrameWorks.Tests
             List<Event> startingData = new List<Event>();
 
 
-            startingData.Add(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            startingData.Add(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+            startingData.Add(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            startingData.Add(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
 
-            startingData.Add(new HarnessRacing("Race Bikes", "Trot", horseList2, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            startingData.Add(new HarnessRacing("Jog Carts", "Walk", horseList2, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            startingData.Add(new HarnessRacing("Speed Carts", "Gallop", horseList2, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+            startingData.Add(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList2));
+            startingData.Add(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList2));
+            startingData.Add(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList2));
 
-            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList3, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            startingData.Add(new JumpRacing("Drop Fence", "Fence", 3, horseList3, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            startingData.Add(new JumpRacing("Standard Water Jump", "Water", 1, horseList3, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList3));
+            startingData.Add(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList3));
+            startingData.Add(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList3));
 
 
 
             EventSchedule comp = new EventSchedule();
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList2, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList2, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList2, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList2));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList2));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList2));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList3, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList3, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList3, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList3));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList3));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList3));
 
                 
             List<Event> events = comp.getAllEvents();
@@ -211,24 +211,24 @@ namespace CA1_WebFrameWorks.Tests
             List<Event> startingData = new List<Event>();
 
 
-            startingData.Add(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            startingData.Add(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
-
+            startingData.Add(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            startingData.Add(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
             EventSchedule comp = new EventSchedule();
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList1));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList1));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList1));
+
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList1));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList1));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList1));
 
 
             List<Event> events = comp.getRacesFromEvent(typeof(EnduranceRacing));
@@ -278,23 +278,24 @@ namespace CA1_WebFrameWorks.Tests
 
             List<Event> startingData = new List<Event>();
 
-            startingData.Add(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            startingData.Add(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            startingData.Add(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+
+            startingData.Add(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList1));
+            startingData.Add(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList1));
+            startingData.Add(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList1));
 
             EventSchedule comp = new EventSchedule();
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList1));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList1));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList1));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList1));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList1));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList1));
 
 
             List<Event> events = comp.getRacesFromEvent(typeof(HarnessRacing));
@@ -345,24 +346,25 @@ namespace CA1_WebFrameWorks.Tests
 
             List<Event> startingData = new List<Event>();
 
-            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            startingData.Add(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            startingData.Add(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
 
+            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList1));
+            startingData.Add(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList1));
+            startingData.Add(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList1));
 
             EventSchedule comp = new EventSchedule();
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList1));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList1));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList1));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList1));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList1));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList1));
+
 
 
             List<Event> events = comp.getRacesFromEvent(typeof(JumpRacing));
@@ -414,27 +416,26 @@ namespace CA1_WebFrameWorks.Tests
             List<Event> startingData = new List<Event>();
 
 
-            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            startingData.Add(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
+            startingData.Add(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            startingData.Add(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList1));
+            startingData.Add(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList1));
    
 
 
 
             EventSchedule comp = new EventSchedule();
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), horseList1, "Royal Ascot", "Ireland", 5, 25, new DateTime(16 / 10 / 2024), 50));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), horseList1, "Dubai World Cup", "Dubai", 7, 8, new DateTime(16 / 10 / 2024), 100));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), horseList1, "Grand National", "England", 3, 40, new DateTime(16 / 10 / 2024), 300));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(16 / 10 / 2024), 50, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(16 / 10 / 2024), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(16 / 10 / 2024), 100, horseList1));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(16 / 10 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(16 / 10 / 2024), 300, horseList1));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", horseList1, "Dubai World Cup", "Dubai", 5, 1.5, new DateTime(16 / 10 / 2024), 70));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", horseList1, "Royal Ascot", "Ireland", 10, 1.5, new DateTime(16 / 10 / 2024), 30));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", horseList1, "Grand National", "England", 4, 1, new DateTime(16 / 10 / 2024), 50));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(16 / 10 / 2024), 70, horseList1));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(16 / 10 / 2024), 30, horseList1));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(16 / 10 / 2024), 50, horseList1));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, horseList1, "Dubai World Cup", "Dubai", 15, 2.5, new DateTime(16 / 10 / 2024), 40));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, horseList1, "Royal Ascot", "Ireland", 3, 4, new DateTime(16 / 10 / 2024), 55));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, horseList1, "Grand National", "England", 6, 3.5, new DateTime(16 / 10 / 2024), 120));
-
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(16 / 10 / 2024), 40, horseList1));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(16 / 10 / 2024), 55, horseList1));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(16 / 10 / 2024), 120, horseList1));
 
             List<Event> events = comp.getRacesFromEventName("Dubai World Cup");
 

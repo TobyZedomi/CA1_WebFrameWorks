@@ -21,16 +21,16 @@ namespace CA1_WebFrameWorks
         private Boolean passFitnessTest;
         private string obstacle;
         private DateTime timeOfCompletion;
-        private List<Horse> horseList;
+        
 
         // constructor
-        public EnduranceRacing(raceGroup newRaceGroup, Boolean passFitnessTest, string obstacle, DateTime timeOfCompletion, List<Horse>horseList, string name, string location, double numberOfRaces, double distance, DateTime startTime, double winningBetPrice) : base(name, location, numberOfRaces, distance, startTime, winningBetPrice)
+        public EnduranceRacing(raceGroup newRaceGroup, Boolean passFitnessTest, string obstacle, DateTime timeOfCompletion, string name, string location, double numberOfRaces, string distance, DateTime startTime, double winningBetPrice, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startTime, winningBetPrice, horseList)
         {
             RaceGroup = newRaceGroup;
             this.passFitnessTest = passFitnessTest;
             this.obstacle = obstacle;
             this.timeOfCompletion = timeOfCompletion;
-            this.horseList = horseList;
+            
         }
 
         // default constructor
@@ -40,7 +40,7 @@ namespace CA1_WebFrameWorks
             this.passFitnessTest = true;
             this.obstacle = "Hurdles";
             this.timeOfCompletion = new DateTime(0, 0, 0);
-            horseList = new List<Horse>();
+            
         }
 
 
@@ -50,12 +50,15 @@ namespace CA1_WebFrameWorks
         public bool PassFitnessTest { get => passFitnessTest; set => passFitnessTest = value; }
         public string Obstacle { get => obstacle; set => obstacle = value; }
         public DateTime TimeOfCompletion { get => timeOfCompletion; set => timeOfCompletion = value; }
-        public List<Horse> HorseList { get => horseList; set => horseList = value; }
 
         // toString
         public override string ToString()
         {
-            return $"{{{nameof(RaceGroup)}={RaceGroup.ToString()}, {nameof(PassFitnessTest)}={PassFitnessTest.ToString()}, {nameof(Obstacle)}={Obstacle}, {nameof(TimeOfCompletion)}={TimeOfCompletion.ToString()}, {nameof(HorseList)}={HorseList}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance.ToString()}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}}}";
+            return $"{{{nameof(RaceGroup)}={RaceGroup.ToString()}, {nameof(PassFitnessTest)}={PassFitnessTest.ToString()}, {nameof(Obstacle)}={Obstacle}, {nameof(TimeOfCompletion)}={TimeOfCompletion.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
         }
+
+
+       
+
     }
 }

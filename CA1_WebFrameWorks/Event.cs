@@ -11,11 +11,12 @@ namespace CA1_WebFrameWorks
         private string name;
         private string location;
         private double numberOfRaces;
-        private double distance;
+        private string distance;
         private DateTime startTime;
         private double winningBetPrice;
+        private List<Horse> horseList;
 
-        public Event(string name, string location, double numberOfRaces, double distance, DateTime startTime, double winningBetPrice)
+        public Event(string name, string location, double numberOfRaces, string distance, DateTime startTime, double winningBetPrice, List<Horse> horseList)
         {
             this.name = name;
             this.location = location;
@@ -23,6 +24,7 @@ namespace CA1_WebFrameWorks
             this.distance = distance;
             this.startTime = startTime;
             this.winningBetPrice = winningBetPrice;
+            this.horseList = horseList;
         }
 
         public Event()
@@ -30,18 +32,21 @@ namespace CA1_WebFrameWorks
             name = "World Championship";
             location = "Ireland";
             numberOfRaces = 5;
-            distance = 5;
+            distance = "50 metres";
             startTime = new DateTime(2023, 12, 3);
             winningBetPrice = 40;
+            horseList = new List<Horse>();
         }
 
 
         public string Name { get => name; set => name = value; }
         public string Location { get => location; set => location = value; }
         public double NumberOfRaces { get => numberOfRaces; set => numberOfRaces = value; }
-        public double Distance { get => distance; set => distance = value; }
+        public string Distance { get => distance; set => distance = value; }
         public DateTime StartTime { get => startTime; set => startTime = value; }
         public double WinningBetPrice { get => winningBetPrice; set => winningBetPrice = value; }
+
+        public List<Horse> HorseList { get => horseList; set => horseList = value; }
 
         public override string ToString()
         {

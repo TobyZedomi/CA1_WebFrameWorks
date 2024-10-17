@@ -31,78 +31,7 @@ namespace CA1_WebFrameWorks
             
             Boolean result2 = false;
 
-            /*
-            int number3 = 0;
-
-            while (!result2)
-            {
-                string[] array5 = new string[2];
-                array5[0] = "1. Register";
-                array5[1] = "2. Login";
-                Console.WriteLine("");
-
-
-                for (int i = 0; i < array5.Length; i++)
-                {
-                    Console.WriteLine(array5[i]);
-                }
-
-                Console.WriteLine("Enter Number: ");
-                number3 = Convert.ToInt32(Console.ReadLine());
-
-                switch(number3)
-                {
-                    case 1:
-
-                        Console.WriteLine("Enter name: ");
-                        string nameUser = Console.ReadLine();
-
-                        Console.WriteLine("Enter email: ");
-                        string emailOfUser = Console.ReadLine();
-
-                        Console.WriteLine("Enter password: ");
-                        string passwordForUser = Console.ReadLine();
-
-                        Console.WriteLine("Enter userId: ");
-                        int userId = Convert.ToInt32(Console.ReadLine());
-
-                        users.Add(new User(nameUser, emailOfUser, passwordForUser, userId));
-
-                        break;
-                    case 2:
-                        Boolean repeat3 = false;
-                        
-                        while (!repeat3)
-                        {
-
-                            Console.WriteLine("Enter the name of the user: ");
-                            string nameOfUser = Console.ReadLine();
-
-                            Console.WriteLine("Enter the password: ");
-                            string passwordUser = Console.ReadLine();
-
-
-                            for (int i = 0; i < users.Count; i++)
-                            {
-                                if (users[i].Name.Equals(nameOfUser) && users[i].Password.Equals(passwordUser))
-                                {
-                                    Console.WriteLine("Login was successful");
-                                    repeat3 = false;
-                                }
-                                else
-                                {
-                                    repeat3 = true;
-                                }
-                            }
-                        }
-                        break;
-                    
-
-                }
-
-            }
-            */
-
+            
             while (!result2)
             {
 
@@ -149,12 +78,11 @@ namespace CA1_WebFrameWorks
                             if (users[i].Name.Equals(nameOfUser) && users[i].Password.Equals(passwordUser))
                             {
                                 Console.WriteLine("Login was successful");
-                                repeat3 = false;
+                                repeat3 = true;
                             }
                             else
                             {
-                                Console.WriteLine("Try login again");
-                                repeat3 = true;
+                               
                             }
                         }
                         
@@ -163,24 +91,23 @@ namespace CA1_WebFrameWorks
                     result2 = true;
                 }
             }
-
-
+            
 
             EventSchedule comp = new EventSchedule();
 
            
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", DateTime.Now, getHorse("horseFileEndure.txt"), "Royal Ascot", "Ireland", 5, 25, DateTime.Now, 50));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", DateTime.Now, getHorse("horseFileEndure.txt"), "Dubai World Cup", "Dubai", 7, 8, DateTime.Now, 100));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", DateTime.Now, getHorse("horseFileEndure.txt"), "Grand National", "England", 3, 40, DateTime.Now, 300));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", DateTime.Now, "Royal Ascot", "Ireland", 5, "25 miles", DateTime.Now, 50, getHorse("horseFileEndure.txt")));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", DateTime.Now, "Dubai World Cup", "Dubai", 7, "8 miles", DateTime.Now, 100, getHorse("horseFileEndure.txt")));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", DateTime.Now, "Grand National", "England", 3, "40 miles", DateTime.Now, 300, getHorse("horseFileEndure.txt")));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", getHorse("horseFileHarness.txt"), "Dubai World Cup", "Dubai", 5, 1.5, DateTime.Now, 70));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", getHorse("horseFileHarness.txt"), "Royal Ascot", "Ireland", 10, 1.5, DateTime.Now, 30));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", getHorse("horseFileHarness.txt"), "Grand National", "England", 4, 1, DateTime.Now, 50));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", DateTime.Now, 70, getHorse("horseFileHarness.txt")));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", DateTime.Now, 30, getHorse("horseFileHarness.txt")));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", DateTime.Now, 50, getHorse("horseFileHarness.txt")));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, getHorse("horseFileJump.txt"), "Dubai World Cup", "Dubai", 15, 2.5, DateTime.Now, 40));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, getHorse("horseFileJump.txt"), "Royal Ascot", "Ireland", 3, 4, DateTime.Now, 55));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, getHorse("horseFileJump.txt"), "Grand National", "England", 6, 3.5, DateTime.Now, 120));
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", DateTime.Now, 40, getHorse("horseFileJump.txt")));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", DateTime.Now, 55, getHorse("horseFileJump.txt")));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", DateTime.Now, 120, getHorse("horseFileJump.txt")));
 
             int num = 0;
 
@@ -310,7 +237,7 @@ namespace CA1_WebFrameWorks
                         while (!repeat6)
                         {
 
-                            Console.WriteLine("Enter which race you want the horse to be added to ");
+                            Console.WriteLine("Enter which race you want to attend: ");
                             string race = Console.ReadLine();
 
                             if (race.Equals("Endurance Racing"))
@@ -394,6 +321,8 @@ namespace CA1_WebFrameWorks
                         
                         break;
                     case 6:
+
+                        result = true;
                         break;
                 }
 
