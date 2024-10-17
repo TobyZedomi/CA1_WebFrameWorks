@@ -23,16 +23,161 @@ namespace CA1_WebFrameWorks
           //  writeHorse("horseFile.txt");
 
             
-        /*
-            List<Horse> horse1 = new List<Horse>();
-            horse1.Add(new Horse("Horse1",DateTime.Now));
+            List<User> users = new List<User>();    
 
-            List<Horse> horse2 = new List<Horse>();
-            horse2.Add(new Horse("Horse2", DateTime.Now));
+            users.Add(new User("Toby","toby@gmail.com","abc",1));
+            users.Add(new User("George", "george@gmail.com", "abc", 2));
+            users.Add(new User("Sean", "sean@gmail.com", "abc", 1));
+            
+            Boolean result2 = false;
 
-            List<Horse> horse3 = new List<Horse>();
-            horse3.Add(new Horse("Horse3", DateTime.Now));
-        */
+            /*
+            int number3 = 0;
+
+            while (!result2)
+            {
+                string[] array5 = new string[2];
+                array5[0] = "1. Register";
+                array5[1] = "2. Login";
+                Console.WriteLine("");
+
+
+                for (int i = 0; i < array5.Length; i++)
+                {
+                    Console.WriteLine(array5[i]);
+                }
+
+                Console.WriteLine("Enter Number: ");
+                number3 = Convert.ToInt32(Console.ReadLine());
+
+                switch(number3)
+                {
+                    case 1:
+
+                        Console.WriteLine("Enter name: ");
+                        string nameUser = Console.ReadLine();
+
+                        Console.WriteLine("Enter email: ");
+                        string emailOfUser = Console.ReadLine();
+
+                        Console.WriteLine("Enter password: ");
+                        string passwordForUser = Console.ReadLine();
+
+                        Console.WriteLine("Enter userId: ");
+                        int userId = Convert.ToInt32(Console.ReadLine());
+
+                        users.Add(new User(nameUser, emailOfUser, passwordForUser, userId));
+
+                        break;
+                    case 2:
+                        Boolean repeat3 = false;
+                        
+                        while (!repeat3)
+                        {
+
+                            Console.WriteLine("Enter the name of the user: ");
+                            string nameOfUser = Console.ReadLine();
+
+                            Console.WriteLine("Enter the password: ");
+                            string passwordUser = Console.ReadLine();
+
+
+                            for (int i = 0; i < users.Count; i++)
+                            {
+                                if (users[i].Name.Equals(nameOfUser) && users[i].Password.Equals(passwordUser))
+                                {
+                                    Console.WriteLine("Login was successful");
+                                    repeat3 = false;
+                                }
+                                else
+                                {
+                                    repeat3 = true;
+                                }
+                            }
+                        }
+                        break;
+                    
+
+                }
+
+            }
+            */
+
+            while (!result2)
+            {
+
+                Console.WriteLine("Enter Login to login and register to register");
+                string login = Console.ReadLine();
+
+
+                if (login.Equals("Register"))
+                {
+                    Console.WriteLine("Enter name: ");
+                    string nameUser = Console.ReadLine();
+
+                    Console.WriteLine("Enter email: ");
+                    string emailOfUser = Console.ReadLine();
+
+                    Console.WriteLine("Enter password: ");
+                    string passwordForUser = Console.ReadLine();
+
+                    Console.WriteLine("Enter userId: ");
+                    int userId = Convert.ToInt32(Console.ReadLine());
+
+                    users.Add(new User(nameUser, emailOfUser, passwordForUser, userId));
+
+                    result2 = false;
+
+                }
+                else if (login.Equals("Login"))
+                {
+                    Boolean repeat3 = false;
+
+                    while (!repeat3)
+                    {
+
+                        Console.WriteLine("Enter the name of the user: ");
+                        string nameOfUser = Console.ReadLine();
+
+                        Console.WriteLine("Enter the password: ");
+                        string passwordUser = Console.ReadLine();
+
+
+                        
+                        for (int i = 0; i < users.Count; i++)
+                        {
+                            if (users[i].Name.Equals(nameOfUser) && users[i].Password.Equals(passwordUser))
+                            {
+                                Console.WriteLine("Login was successful");
+                                repeat3 = true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Try login again");
+                                repeat3 = false;
+                            }
+                        }
+                        
+                        /*
+                    User u = new User(nameOfUser, passwordUser, "@gmail.com",1);
+
+                        if (users.Contains(u) )
+                        {
+                            Console.WriteLine("Login was successful");
+                            repeat3 = false;
+                        }
+                        else
+                        {
+                            repeat3 = true;
+                        }
+                        */
+
+                    }
+
+                    result2 = true;
+                }
+            }
+
 
 
             EventSchedule comp = new EventSchedule();
