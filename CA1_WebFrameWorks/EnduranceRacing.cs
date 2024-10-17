@@ -57,8 +57,9 @@ namespace CA1_WebFrameWorks
             return $"{{{nameof(RaceGroup)}={RaceGroup.ToString()}, {nameof(PassFitnessTest)}={PassFitnessTest.ToString()}, {nameof(Obstacle)}={Obstacle}, {nameof(TimeOfCompletion)}={TimeOfCompletion.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
         }
 
-
-       
-
+        public override double calcWinningPrice()
+        {
+            return this.WinningBetPrice * 3;
+        }
     }
 }

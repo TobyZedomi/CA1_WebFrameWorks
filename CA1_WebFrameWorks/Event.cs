@@ -48,6 +48,8 @@ namespace CA1_WebFrameWorks
 
         public List<Horse> HorseList { get => horseList; set => horseList = value; }
 
+        public abstract double calcWinningPrice();
+
         public override string ToString()
         {
             return $"{{{nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance.ToString()}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}}}";

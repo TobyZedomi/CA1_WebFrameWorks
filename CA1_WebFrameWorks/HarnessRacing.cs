@@ -32,6 +32,11 @@ namespace CA1_WebFrameWorks
         public string SulkyType { get => sulkyType; set => sulkyType = value; }
         public string GaitType { get => gaitType; set => gaitType = value; }
 
+        public override double calcWinningPrice()
+        {
+            return this.WinningBetPrice * 2;
+        }
+
         public override string ToString()
         {
             return $"{{{nameof(SulkyType)}={SulkyType}, {nameof(GaitType)}={GaitType}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";

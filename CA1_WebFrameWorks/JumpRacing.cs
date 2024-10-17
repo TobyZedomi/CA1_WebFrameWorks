@@ -38,6 +38,11 @@ namespace CA1_WebFrameWorks
         public string Obstacle { get => obstacle; set => obstacle = value; }
         public double ObstacleHeight { get => obstacleHeight; set => obstacleHeight = value; }
 
+
+        public override double calcWinningPrice()
+        {
+            return this.WinningBetPrice * 4;
+        }
         public override string ToString()
         {
             return $"{{{nameof(TypeOfJump)}={TypeOfJump}, {nameof(Obstacle)}={Obstacle}, {nameof(ObstacleHeight)}={ObstacleHeight.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
