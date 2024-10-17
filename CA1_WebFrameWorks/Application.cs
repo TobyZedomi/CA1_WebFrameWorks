@@ -303,12 +303,12 @@ namespace CA1_WebFrameWorks
                                 }
                                 else if (race.Equals("Jump Racing"))
                                 {
-                                    writeHorse("horseFileJump");
+                                    writeHorse("horseFileJump.txt");
                                     repeat = true;
                                 }
                                 else if (race.Equals("Harness Racing"))
                                 {
-                                    writeHorse("horseFileHarness");
+                                    writeHorse("horseFileHarness.txt");
                                     repeat = true;
                                 }
                                 else
