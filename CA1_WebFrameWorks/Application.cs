@@ -39,7 +39,7 @@ namespace CA1_WebFrameWorks
                 string login = Console.ReadLine();
 
 
-                if (login.Equals("Register"))
+                if (login.Equals("Register", StringComparison.InvariantCultureIgnoreCase))
                 {
                     Console.WriteLine("Enter name: ");
                     string nameUser = Console.ReadLine();
@@ -58,7 +58,7 @@ namespace CA1_WebFrameWorks
                     result2 = false;
 
                 }
-                else if (login.Equals("Login"))
+                else if (login.Equals("Login", StringComparison.InvariantCultureIgnoreCase))
                 {
                     Boolean repeat3 = false;
 
@@ -75,7 +75,7 @@ namespace CA1_WebFrameWorks
                         
                         for (int i = 0; i < users.Count; i++)
                         {
-                            if (users[i].Name.Equals(nameOfUser) && users[i].Password.Equals(passwordUser))
+                            if (users[i].Name.Equals(nameOfUser, StringComparison.InvariantCultureIgnoreCase) && users[i].Password.Equals(passwordUser))
                             {
                                 Console.WriteLine("Login was successful");
                                 repeat3 = true;
@@ -175,7 +175,7 @@ namespace CA1_WebFrameWorks
                             Console.WriteLine("Enter Race Name you want to attend: ");
                             string raceName1 = Console.ReadLine();
 
-                            if (raceName1.Equals("Endurance Racing"))
+                            if (raceName1.Equals("Endurance Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
                                 Console.WriteLine("Enter Event Name: ");
                                 string eventName2 = Console.ReadLine();
@@ -190,7 +190,7 @@ namespace CA1_WebFrameWorks
                                 result1 = true;
 
                             }
-                            else if (raceName1.Equals("Harness Racing"))
+                            else if (raceName1.Equals("Harness Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
 
                                 Console.WriteLine("Enter Event Name: ");
@@ -204,7 +204,7 @@ namespace CA1_WebFrameWorks
                                 }
                                 result1 = true;
                             }
-                            else if (raceName1.Equals("Jump Racing"))
+                            else if (raceName1.Equals("Jump Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
 
 
@@ -241,7 +241,7 @@ namespace CA1_WebFrameWorks
                             Console.WriteLine("Enter which race you want to attend: ");
                             string race = Console.ReadLine();
 
-                            if (race.Equals("Endurance Racing"))
+                            if (race.Equals("Endurance Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
                                 List<Event> events11 = comp.getRacesFromEvent(typeof(EnduranceRacing));
 
@@ -252,7 +252,7 @@ namespace CA1_WebFrameWorks
 
                                 repeat6 = true;
                             }
-                            else if (race.Equals("Jump Racing"))
+                            else if (race.Equals("Jump Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
                                 List<Event> events11 = comp.getRacesFromEvent(typeof(JumpRacing));
 
@@ -262,7 +262,7 @@ namespace CA1_WebFrameWorks
                                 }
                                 repeat6 = true;
                             }
-                            else if (race.Equals("Harness Racing"))
+                            else if (race.Equals("Harness Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
                                 List<Event> events11 = comp.getRacesFromEvent(typeof(HarnessRacing));
 
@@ -297,17 +297,17 @@ namespace CA1_WebFrameWorks
                             Console.WriteLine("Enter which race you want the horse to be added to ");
                             string race = Console.ReadLine();
                             
-                                if (race.Equals("Endurance Racing"))
+                                if (race.Equals("Endurance Racing", StringComparison.InvariantCultureIgnoreCase))
                                 {
                                     writeHorse("horseFileEndure.txt");
                                     repeat = true;
                                 }
-                                else if (race.Equals("Jump Racing"))
+                                else if (race.Equals("Jump Racing", StringComparison.InvariantCultureIgnoreCase))
                                 {
                                     writeHorse("horseFileJump.txt");
                                     repeat = true;
                                 }
-                                else if (race.Equals("Harness Racing"))
+                                else if (race.Equals("Harness Racing", StringComparison.InvariantCultureIgnoreCase))
                                 {
                                     writeHorse("horseFileHarness.txt");
                                     repeat = true;
@@ -333,7 +333,7 @@ namespace CA1_WebFrameWorks
                             Console.WriteLine("Enter which race you want the horse to be added to ");
                             string race = Console.ReadLine();
 
-                            if (race.Equals("Endurance Racing"))
+                            if (race.Equals("Endurance Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
 
                                 Boolean repeat9 = false;
@@ -405,7 +405,7 @@ namespace CA1_WebFrameWorks
                                 }
                                 repeat4 = true;
                             }
-                            else if (race.Equals("Jump Racing"))
+                            else if (race.Equals("Jump Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
                                 Boolean repeat9 = false;
 
@@ -469,7 +469,7 @@ namespace CA1_WebFrameWorks
 
                                 repeat4 = true;
                             }
-                            else if (race.Equals("Harness Racing"))
+                            else if (race.Equals("Harness Racing", StringComparison.InvariantCultureIgnoreCase))
                             {
 
                                 Boolean repeat9 = false;
