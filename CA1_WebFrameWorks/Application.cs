@@ -118,7 +118,7 @@ namespace CA1_WebFrameWorks
                 string[] array = new string[7];
 
                 array[0] = "1. Get All Events";
-                array[1] = "2. Get All Events From Name";
+                array[1] = "2. Get All Events From Event Name";
                 array[2] = "3. Get All Horses From Event Name for particular Race";
                 array[3] = "4. Get All Races From Race Name";
                 array[4] = "5. Add a horse to the list";
