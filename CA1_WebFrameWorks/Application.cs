@@ -23,7 +23,7 @@ namespace CA1_WebFrameWorks
           //  writeHorse("horseFile.txt");
 
             
-            List<User> users = new List<User>();    
+            List<User> users = new List<User>();   
 
             users.Add(new User("Toby","toby@gmail.com","abc",1));
             users.Add(new User("George", "george@gmail.com", "abc", 2));
