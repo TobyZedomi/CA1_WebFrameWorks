@@ -590,8 +590,7 @@ namespace CA1_WebFrameWorks
             string filePath = @"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\" + fileName;
 
             StreamWriter write = File.AppendText(filePath);
-            // List<string> list = new List<string>();
-            // List<Horse> h1 = new List<Horse>();
+            
 
             Boolean repeat12 = false;
 
@@ -627,9 +626,6 @@ namespace CA1_WebFrameWorks
                     repeat12 = false;
                 }
             }
-
-            //Horse horse = new Horse(name, birth);
-            //    h1.Add(horse);
 
           
 
