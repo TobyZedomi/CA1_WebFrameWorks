@@ -115,14 +115,15 @@ namespace CA1_WebFrameWorks
 
             while (!result)
             {
-                string[] array = new string[6];
+                string[] array = new string[7];
 
                 array[0] = "1. Get All Events";
                 array[1] = "2. Get All Events From Name";
                 array[2] = "3. Get All Horses From Event Name for particular Race";
                 array[3] = "4. Get All Races From Race Name";
                 array[4] = "5. Add a horse to the list";
-                array[5] = "6. To Exit";
+                array[5] = "6. Add an event for a race";
+                array[6] = "7. To Exit";
                 Console.WriteLine("");
 
 
@@ -322,6 +323,227 @@ namespace CA1_WebFrameWorks
                         break;
                     case 6:
 
+                        Boolean repeat4 = false;
+
+                        while (!repeat4)
+                        {
+
+
+
+                            Console.WriteLine("Enter which race you want the horse to be added to ");
+                            string race = Console.ReadLine();
+
+                            if (race.Equals("Endurance Racing"))
+                            {
+
+                                Boolean repeat9 = false;
+                                while (!repeat9)
+                                {
+                                    try
+                                    {
+                                        Console.WriteLine("Enter raceGroup: ");
+                                        string group = Console.ReadLine();
+
+                                        Console.WriteLine("Enter true if passed fitness test or false if not: ");
+                                        Boolean pass = Console.ReadLine() == "true";
+
+                                        Console.WriteLine("Enter obstacle: ");
+                                        string obstacle = Console.ReadLine();
+
+                                        Console.WriteLine("Enter month for timeOfCompletion: ");
+                                        int month1 = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a day for timeOfCompletion: ");
+                                        int day1 = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a year for timeOfCompletion: ");
+                                        int year1 = int.Parse(Console.ReadLine());
+
+                                        DateTime completeTime = new DateTime(year1, month1, day1);
+
+                                        Console.WriteLine("Enter name of event: ");
+                                        string eventName = Console.ReadLine();
+
+                                        Console.WriteLine("Eneter location of event: ");
+                                        string location = Console.ReadLine();
+
+                                        Console.WriteLine("Enter number of races: ");
+                                        double numOfRaces = Convert.ToDouble(Console.ReadLine());
+
+                                        Console.WriteLine("Enter distance in miles: ");
+                                        string distance = Console.ReadLine();
+
+                                        Console.WriteLine("Enter month for startTime: ");
+                                        int month = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a day for startTime: ");
+                                        int day = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a year for startTime: ");
+                                        int year = int.Parse(Console.ReadLine());
+
+                                        DateTime startTime = new DateTime(year, month, day);
+
+                                        Console.WriteLine("Eneter winning prize for bets: ");
+                                        double prize = Convert.ToDouble(Console.ReadLine());
+
+                                        comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, pass, obstacle, completeTime, eventName, location, numOfRaces, distance, startTime, prize, getHorse("horseFileEndure.txt")));
+                                        repeat9 = true;
+                                    }
+                                    catch (FormatException)
+                                    {
+                                        Console.Write("Enter numbers only for prize");
+                                        Console.WriteLine("");
+                                        repeat9 = false;
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Console.Write("Wrong format for completeTime or startTime. dd/mm/yyyy ");
+                                        Console.WriteLine("");
+                                        repeat9 = false;
+                                    }
+                                }
+                                repeat4 = true;
+                            }
+                            else if (race.Equals("Jump Racing"))
+                            {
+                                Boolean repeat9 = false;
+
+                                while (!repeat9)
+                                {
+                                    try
+                                    {
+                                        Console.WriteLine("Enetr type of jump: ");
+                                        string typeJump = Console.ReadLine();
+
+                                        Console.WriteLine("Eneter obstacle: ");
+                                        string obstacle = Console.ReadLine();
+
+                                        Console.WriteLine("Enter obstacle height: ");
+                                        double height = Convert.ToDouble(Console.ReadLine());
+
+                                        Console.WriteLine("Enter name of event: ");
+                                        string eventName = Console.ReadLine();
+
+                                        Console.WriteLine("Eneter location of event: ");
+                                        string location = Console.ReadLine();
+
+                                        Console.WriteLine("Enter number of races: ");
+                                        double numOfRaces = Convert.ToDouble(Console.ReadLine());
+
+                                        Console.WriteLine("Enter distance in miles: ");
+                                        string distance = Console.ReadLine();
+
+                                        Console.WriteLine("Enter month for startTime: ");
+                                        int month = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a day for startTime: ");
+                                        int day = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a year for startTime: ");
+                                        int year = int.Parse(Console.ReadLine());
+
+                                        DateTime startTime = new DateTime(year, month, day);
+
+                                        Console.WriteLine("Enter winning prize for bets: ");
+                                        double prize = Convert.ToDouble(Console.ReadLine());
+
+
+                                        comp.addEvent(new JumpRacing(typeJump, obstacle, height, eventName, location, numOfRaces, distance, startTime, prize, getHorse("horseFileHarness.txt")));
+                                        repeat9 = true;
+                                    }
+                                    catch (FormatException)
+                                    {
+                                        Console.Write("Enter numbers only for height and prize");
+                                        Console.WriteLine("");
+                                        repeat9 = false;
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Console.Write("Wrong format for startTime. dd/mm/yyyy ");
+                                        Console.WriteLine("");
+                                        repeat9 = false;
+                                    }
+
+                                }
+
+                                repeat4 = true;
+                            }
+                            else if (race.Equals("Harness Racing"))
+                            {
+
+                                Boolean repeat9 = false;
+
+                                while (!repeat9)
+                                {
+                                    try
+                                    {
+                                        Console.WriteLine("Enter sulky type: ");
+                                        string sulky = Console.ReadLine();
+
+                                        Console.WriteLine("Enter gait type: ");
+                                        string gait = Console.ReadLine();
+
+                                        Console.WriteLine("Enter name of event: ");
+                                        string eventName = Console.ReadLine();
+
+                                        Console.WriteLine("Eneter location of event: ");
+                                        string location = Console.ReadLine();
+
+                                        Console.WriteLine("Enter number of races: ");
+                                        double numOfRaces = Convert.ToDouble(Console.ReadLine());
+
+                                        Console.WriteLine("Enter distance in miles: ");
+                                        string distance = Console.ReadLine();
+
+                                        Console.WriteLine("Enter month for startTime: ");
+                                        int month = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a day for startTime: ");
+                                        int day = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Enter a year for startTime: ");
+                                        int year = int.Parse(Console.ReadLine());
+
+                                        DateTime startTime = new DateTime(year,month,day);
+
+                                        Console.WriteLine("Enter winning prize for bets: ");
+                                        double prize = Convert.ToDouble(Console.ReadLine());
+
+
+                                        comp.addEvent(new HarnessRacing(sulky, gait, eventName, location, numOfRaces, distance, startTime, prize, getHorse("horseFileJump.txt")));
+                                        repeat9 = true;
+                                    }
+                                    catch (FormatException)
+                                    {
+                                        Console.Write("Enter numbers only for the number of races and prize");
+                                        Console.WriteLine("");
+                                        repeat9 = false;
+                                    }catch (Exception e)
+                                    {
+                                        Console.Write("Wrong format for startTime. dd/mm/yyyy ");
+                                        Console.WriteLine("");
+                                        repeat9 = false;
+                                    }
+
+                                }
+
+                               
+                                repeat4 = true;
+                            }
+                            else
+                            {
+                                Console.Write("The only races available are Endurace, Jumping and Harness Racing, Enter Again please");
+                                repeat4 = false;
+                            }
+
+                        }
+
+
+
+                        break;
+                        case 7:
+
                         result = true;
                         break;
                 }
@@ -368,31 +590,49 @@ namespace CA1_WebFrameWorks
             string filePath = @"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\" + fileName;
 
             StreamWriter write = File.AppendText(filePath);
-           // List<string> list = new List<string>();
-           // List<Horse> h1 = new List<Horse>();
+            // List<string> list = new List<string>();
+            // List<Horse> h1 = new List<Horse>();
 
-                Console.WriteLine("Enter horse name");
-                string name = Console.ReadLine();
+            Boolean repeat12 = false;
+
+            while (!repeat12)
+            {
+                try
+                {
+                    Console.WriteLine("Enter horse name");
+                    string name = Console.ReadLine();
 
 
-                Console.WriteLine("Enter month: ");
-                int month = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter month: ");
+                    int month = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter a day: ");
-                int day = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter a day: ");
+                    int day = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter a year: ");
-                int year = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter a year: ");
+                    int year = int.Parse(Console.ReadLine());
 
-                DateTime birth = new DateTime(year, month, day);
+                    DateTime birth = new DateTime(year, month, day);
+                    
+
+                    write.WriteLine(name + " " + birth);
+                    write.Close();
+
+                    repeat12 = true;
+                }
+                catch (Exception e)
+                {
+                    Console.Write("Wrong format for startTime. dd/mm/yyyy ");
+                    Console.WriteLine("");
+                    repeat12 = false;
+                }
+            }
 
             //Horse horse = new Horse(name, birth);
             //    h1.Add(horse);
 
           
 
-            write.WriteLine(name + " " +birth);
-                write.Close();
         }
 
 
