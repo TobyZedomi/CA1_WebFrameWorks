@@ -191,7 +191,7 @@ namespace CA1_WebFrameWorks.Tests
                 Assert.AreEqual(events[i].Location, startingData[i].Location);
                 Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
                 Assert.AreEqual(events[i].Distance, startingData[i].Distance);
-                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].StartDate, startingData[i].StartDate);
                 Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
             }
 
@@ -258,7 +258,7 @@ namespace CA1_WebFrameWorks.Tests
                 Assert.AreEqual(events[i].Location, startingData[i].Location);
                 Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
                 Assert.AreEqual(events[i].Distance, startingData[i].Distance);
-                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].StartDate, startingData[i].StartDate);
                 Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
             }
 
@@ -325,7 +325,7 @@ namespace CA1_WebFrameWorks.Tests
                 Assert.AreEqual(events[i].Location, startingData[i].Location);
                 Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
                 Assert.AreEqual(events[i].Distance, startingData[i].Distance);
-                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].StartDate, startingData[i].StartDate);
                 Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
             }
 
@@ -394,7 +394,7 @@ namespace CA1_WebFrameWorks.Tests
                 Assert.AreEqual(events[i].Location, startingData[i].Location);
                 Assert.AreEqual(events[i].NumberOfRaces, startingData[i].NumberOfRaces);
                 Assert.AreEqual(events[i].Distance, startingData[i].Distance);
-                Assert.AreEqual(events[i].StartTime, startingData[i].StartTime);
+                Assert.AreEqual(events[i].StartDate, startingData[i].StartDate);
                 Assert.AreEqual(events[i].WinningBetPrice, startingData[i].WinningBetPrice);
             }
 

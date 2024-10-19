@@ -17,8 +17,8 @@ namespace CA1_WebFrameWorks
             List<User> users = new List<User>();   
 
             users.Add(new User("Toby","toby@gmail.com","abc",1));
-            users.Add(new User("George", "george@gmail.com", "abc", 2));
-            users.Add(new User("Sean", "sean@gmail.com", "abc", 1));
+            users.Add(new User("George", "george@gmail.com", "race", 2));
+            users.Add(new User("Sean", "sean@gmail.com", "power", 1));
             
             Boolean result2 = false;
 
@@ -26,7 +26,7 @@ namespace CA1_WebFrameWorks
             while (!result2)
             {
 
-                Console.WriteLine("Enter Login to login and register to register");
+                Console.WriteLine("Enter Login to login and Register to register");
                 string login = Console.ReadLine();
 
 
@@ -365,13 +365,13 @@ namespace CA1_WebFrameWorks
                                         Console.WriteLine("Enter distance in miles: ");
                                         string distance = Console.ReadLine();
 
-                                        Console.WriteLine("Enter month for startTime: ");
+                                        Console.WriteLine("Enter month for startDate: ");
                                         int month = int.Parse(Console.ReadLine());
 
-                                        Console.WriteLine("Enter a day for startTime: ");
+                                        Console.WriteLine("Enter a day for startDate: ");
                                         int day = int.Parse(Console.ReadLine());
 
-                                        Console.WriteLine("Enter a year for startTime: ");
+                                        Console.WriteLine("Enter a year for startDate: ");
                                         int year = int.Parse(Console.ReadLine());
 
                                         DateTime startTime = new DateTime(year, month, day);
@@ -390,7 +390,7 @@ namespace CA1_WebFrameWorks
                                     }
                                     catch (Exception e)
                                     {
-                                        Console.Write("Wrong format for completeTime or startTime. dd/mm/yyyy ");
+                                        Console.Write("Wrong format for completeTime or startDate. dd/mm/yyyy ");
                                         Console.WriteLine("");
                                         repeat9 = false;
                                     }
@@ -426,13 +426,13 @@ namespace CA1_WebFrameWorks
                                         Console.WriteLine("Enter distance in miles: ");
                                         string distance = Console.ReadLine();
 
-                                        Console.WriteLine("Enter month for startTime: ");
+                                        Console.WriteLine("Enter month for startDate: ");
                                         int month = int.Parse(Console.ReadLine());
 
-                                        Console.WriteLine("Enter a day for startTime: ");
+                                        Console.WriteLine("Enter a day for startDate: ");
                                         int day = int.Parse(Console.ReadLine());
 
-                                        Console.WriteLine("Enter a year for startTime: ");
+                                        Console.WriteLine("Enter a year for startDate: ");
                                         int year = int.Parse(Console.ReadLine());
 
                                         DateTime startTime = new DateTime(year, month, day);
@@ -452,7 +452,7 @@ namespace CA1_WebFrameWorks
                                     }
                                     catch (Exception e)
                                     {
-                                        Console.Write("Wrong format for startTime. dd/mm/yyyy ");
+                                        Console.Write("Wrong format for startDate. dd/mm/yyyy ");
                                         Console.WriteLine("");
                                         repeat9 = false;
                                     }
@@ -488,13 +488,13 @@ namespace CA1_WebFrameWorks
                                         Console.WriteLine("Enter distance in miles: ");
                                         string distance = Console.ReadLine();
 
-                                        Console.WriteLine("Enter month for startTime: ");
+                                        Console.WriteLine("Enter month for startDate: ");
                                         int month = int.Parse(Console.ReadLine());
 
-                                        Console.WriteLine("Enter a day for startTime: ");
+                                        Console.WriteLine("Enter a day for startDate: ");
                                         int day = int.Parse(Console.ReadLine());
 
-                                        Console.WriteLine("Enter a year for startTime: ");
+                                        Console.WriteLine("Enter a year for startDate: ");
                                         int year = int.Parse(Console.ReadLine());
 
                                         DateTime startTime = new DateTime(year,month,day);
@@ -513,7 +513,7 @@ namespace CA1_WebFrameWorks
                                         repeat9 = false;
                                     }catch (Exception e)
                                     {
-                                        Console.Write("Wrong format for startTime. dd/mm/yyyy ");
+                                        Console.Write("Wrong format for startDate. dd/mm/yyyy ");
                                         Console.WriteLine("");
                                         repeat9 = false;
                                     }
