@@ -24,7 +24,7 @@ namespace CA1_WebFrameWorks
         
 
         // constructor
-        public EnduranceRacing(raceGroup newRaceGroup, Boolean passFitnessTest, string obstacle, DateTime timeOfCompletion, string name, string location, double numberOfRaces, string distance, DateTime startTime, double winningBetPrice, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startTime, winningBetPrice, horseList)
+        public EnduranceRacing(raceGroup newRaceGroup, Boolean passFitnessTest, string obstacle, DateTime timeOfCompletion, string name, string location, double numberOfRaces, string distance, DateTime startDate, double winningBetPrice, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startDate, winningBetPrice, horseList)
         {
             RaceGroup = newRaceGroup;
             this.passFitnessTest = passFitnessTest;
@@ -54,7 +54,7 @@ namespace CA1_WebFrameWorks
         // toString
         public override string ToString()
         {
-            return $"{{{nameof(RaceGroup)}={RaceGroup.ToString()}, {nameof(PassFitnessTest)}={PassFitnessTest.ToString()}, {nameof(Obstacle)}={Obstacle}, {nameof(TimeOfCompletion)}={TimeOfCompletion.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
+            return $"{{{nameof(RaceGroup)}={RaceGroup.ToString()}, {nameof(PassFitnessTest)}={PassFitnessTest.ToString()}, {nameof(Obstacle)}={Obstacle}, {nameof(TimeOfCompletion)}={TimeOfCompletion.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartDate)}={StartDate.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
         }
 
         public override double calcWinningPrice()

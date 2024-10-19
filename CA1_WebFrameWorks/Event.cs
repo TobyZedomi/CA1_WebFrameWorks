@@ -12,17 +12,17 @@ namespace CA1_WebFrameWorks
         private string location;
         private double numberOfRaces;
         private string distance;
-        private DateTime startTime;
+        private DateTime startDate;
         private double winningBetPrice;
         private List<Horse> horseList;
 
-        public Event(string name, string location, double numberOfRaces, string distance, DateTime startTime, double winningBetPrice, List<Horse> horseList)
+        public Event(string name, string location, double numberOfRaces, string distance, DateTime startDate, double winningBetPrice, List<Horse> horseList)
         {
             this.name = name;
             this.location = location;
             this.numberOfRaces = numberOfRaces;
             this.distance = distance;
-            this.startTime = startTime;
+            this.startDate = startDate;
             this.winningBetPrice = winningBetPrice;
             this.horseList = horseList;
         }
@@ -33,7 +33,7 @@ namespace CA1_WebFrameWorks
             location = "Ireland";
             numberOfRaces = 5;
             distance = "50 metres";
-            startTime = new DateTime(2023, 12, 3);
+            startDate = new DateTime(2023, 12, 3);
             winningBetPrice = 40;
             horseList = new List<Horse>();
         }
@@ -55,7 +55,7 @@ namespace CA1_WebFrameWorks
         
         }
         public string Distance { get => distance; set => distance = value; }
-        public DateTime StartTime { get => startTime; set => startTime = value; }
+        public DateTime StartDate { get => startDate; set => startDate = value; }
         public double WinningBetPrice 
         { get => winningBetPrice;
             private set
@@ -74,7 +74,7 @@ namespace CA1_WebFrameWorks
 
         public override string ToString()
         {
-            return $"{{{nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance.ToString()}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}}}";
+            return $"{{{nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance.ToString()}, {nameof(StartDate)}={StartDate.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}}}";
         }
 
         

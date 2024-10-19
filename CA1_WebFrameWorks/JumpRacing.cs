@@ -16,7 +16,7 @@ namespace CA1_WebFrameWorks
 
         // parametrized constructor
 
-        public JumpRacing(string typeOfJump, string obstacle, double obstacleHeight, string name, string location, double numberOfRaces, string distance, DateTime startTime, double priceWin, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startTime, priceWin, horseList)
+        public JumpRacing(string typeOfJump, string obstacle, double obstacleHeight, string name, string location, double numberOfRaces, string distance, DateTime startDate, double priceWin, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startDate, priceWin, horseList)
         {
             this.typeOfJump = typeOfJump;
             this.obstacle = obstacle;
@@ -56,7 +56,7 @@ namespace CA1_WebFrameWorks
         }
         public override string ToString()
         {
-            return $"{{{nameof(TypeOfJump)}={TypeOfJump}, {nameof(Obstacle)}={Obstacle}, {nameof(ObstacleHeight)}={ObstacleHeight.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
+            return $"{{{nameof(TypeOfJump)}={TypeOfJump}, {nameof(Obstacle)}={Obstacle}, {nameof(ObstacleHeight)}={ObstacleHeight.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartDate)}={StartDate.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
         }
 
         public double getStaduimCapacity()

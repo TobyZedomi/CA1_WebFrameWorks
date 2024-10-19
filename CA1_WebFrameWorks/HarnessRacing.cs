@@ -12,7 +12,7 @@ namespace CA1_WebFrameWorks
         private string gaitType;
        
 
-        public HarnessRacing(string sulkyType, string gaitType, string name, string location, double numberOfRaces, string distance, DateTime startTime, double winningBetPrice, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startTime, winningBetPrice, horseList)
+        public HarnessRacing(string sulkyType, string gaitType, string name, string location, double numberOfRaces, string distance, DateTime startDate, double winningBetPrice, List<Horse> horseList) : base(name, location, numberOfRaces, distance, startDate, winningBetPrice, horseList)
         {
             this.sulkyType = sulkyType;
             this.gaitType = gaitType;
@@ -21,7 +21,7 @@ namespace CA1_WebFrameWorks
 
         // default constructor
 
-        public HarnessRacing()
+        public HarnessRacing() : base()
         {
             this.sulkyType = "Standard Sulky";
             this.gaitType = "Pace";
@@ -39,7 +39,7 @@ namespace CA1_WebFrameWorks
 
         public override string ToString()
         {
-            return $"{{{nameof(SulkyType)}={SulkyType}, {nameof(GaitType)}={GaitType}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
+            return $"{{{nameof(SulkyType)}={SulkyType}, {nameof(GaitType)}={GaitType}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartDate)}={StartDate.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
         }
 
         public double getStaduimCapacity()
