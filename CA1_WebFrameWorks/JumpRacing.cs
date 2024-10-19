@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public class JumpRacing : Event, IEvent
+    public class JumpRacing : Event, IStadium
     {
 
         private string typeOfJump;

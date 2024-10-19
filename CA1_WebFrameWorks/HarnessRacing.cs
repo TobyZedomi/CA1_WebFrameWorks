@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public class HarnessRacing : Event, IEvent  
+    public class HarnessRacing : Event, IStadium  
     {
         private string sulkyType;
         private string gaitType;
@@ -48,5 +48,7 @@ namespace CA1_WebFrameWorks
 
             return capacity;
         }
+
+
     }
 }

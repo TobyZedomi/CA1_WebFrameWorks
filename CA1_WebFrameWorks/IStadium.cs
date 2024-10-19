@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public interface IEvent
+    public interface IStadium
     {
 
         public double getStaduimCapacity();
