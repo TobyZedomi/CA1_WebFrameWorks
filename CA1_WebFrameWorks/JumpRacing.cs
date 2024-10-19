@@ -36,7 +36,18 @@ namespace CA1_WebFrameWorks
 
         public string TypeOfJump { get => typeOfJump; set => typeOfJump = value; }
         public string Obstacle { get => obstacle; set => obstacle = value; }
-        public double ObstacleHeight { get => obstacleHeight; set => obstacleHeight = value; }
+        public double ObstacleHeight 
+        { get => obstacleHeight;
+            private set
+            {
+                if (obstacleHeight <= 0)
+                {
+                    throw new ArithmeticException("Obstacle height cant be less than 0");
+    
+                }
+                obstacleHeight = value;
+            }
+        }
 
 
         public override double calcWinningPrice()

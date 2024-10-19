@@ -41,10 +41,32 @@ namespace CA1_WebFrameWorks
 
         public string Name { get => name; set => name = value; }
         public string Location { get => location; set => location = value; }
-        public double NumberOfRaces { get => numberOfRaces; set => numberOfRaces = value; }
+        public double NumberOfRaces 
+        { get => numberOfRaces; 
+          
+            private set
+            {
+                if (numberOfRaces <= 0)
+                {
+                    throw new ArithmeticException("Number of races cant be less than 0");
+                }
+                numberOfRaces = value;
+            }
+        
+        }
         public string Distance { get => distance; set => distance = value; }
         public DateTime StartTime { get => startTime; set => startTime = value; }
-        public double WinningBetPrice { get => winningBetPrice; set => winningBetPrice = value; }
+        public double WinningBetPrice 
+        { get => winningBetPrice;
+            private set
+            {
+                if (winningBetPrice <= 0)
+                {
+                    throw new ArithmeticException("Winning bet price cant be less than 0");
+                }
+                winningBetPrice = value;
+            }
+        }
 
         public List<Horse> HorseList { get => horseList; set => horseList = value; }
 
