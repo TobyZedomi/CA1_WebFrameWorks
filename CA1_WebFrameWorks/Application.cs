@@ -13,16 +13,7 @@ namespace CA1_WebFrameWorks
         static void Main(string[] args)
         {
 
-            //  HorseCollection horse4 = new HorseCollection();
-            //  horse4.add();
-
-
-
-            //   Console.WriteLine("");
-
-          //  writeHorse("horseFile.txt");
-
-            
+         
             List<User> users = new List<User>();   
 
             users.Add(new User("Toby","toby@gmail.com","abc",1));
@@ -294,11 +285,12 @@ namespace CA1_WebFrameWorks
 
                            
 
-                            Console.WriteLine("Enter which race you want the horse to be added to ");
+                            Console.WriteLine("Enter which race you want the horse to be added to: Endurance Racing, Harness Racing or Jump Racing ");
                             string race = Console.ReadLine();
                             
                                 if (race.Equals("Endurance Racing", StringComparison.InvariantCultureIgnoreCase))
                                 {
+
                                     writeHorse("horseFileEndure.txt");
                                     repeat = true;
                                 }

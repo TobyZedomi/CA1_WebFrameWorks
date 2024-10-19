@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public abstract class Event
+    public abstract class Event 
     {
         private string name;
         private string location;
@@ -76,5 +76,7 @@ namespace CA1_WebFrameWorks
         {
             return $"{{{nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance.ToString()}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}}}";
         }
+
+        
     }
 }

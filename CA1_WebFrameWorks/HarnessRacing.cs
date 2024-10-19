@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public class HarnessRacing : Event
+    public class HarnessRacing : Event, IEvent  
     {
         private string sulkyType;
         private string gaitType;
@@ -40,6 +40,13 @@ namespace CA1_WebFrameWorks
         public override string ToString()
         {
             return $"{{{nameof(SulkyType)}={SulkyType}, {nameof(GaitType)}={GaitType}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
+        }
+
+        public double getStaduimCapacity()
+        {
+            double capacity = 1000000;
+
+            return capacity;
         }
     }
 }

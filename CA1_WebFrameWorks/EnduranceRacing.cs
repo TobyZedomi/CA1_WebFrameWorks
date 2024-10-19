@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public class EnduranceRacing : Event
+    public class EnduranceRacing : Event, IEvent
     {
 
         public enum raceGroup
@@ -60,6 +60,13 @@ namespace CA1_WebFrameWorks
         public override double calcWinningPrice()
         {
             return this.WinningBetPrice * 3;
+        }
+
+        public double getStaduimCapacity()
+        {
+            double capacity = 60000;
+
+            return capacity;
         }
     }
 }

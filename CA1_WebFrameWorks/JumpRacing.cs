@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA1_WebFrameWorks
 {
-    public class JumpRacing : Event
+    public class JumpRacing : Event, IEvent
     {
 
         private string typeOfJump;
@@ -57,6 +57,13 @@ namespace CA1_WebFrameWorks
         public override string ToString()
         {
             return $"{{{nameof(TypeOfJump)}={TypeOfJump}, {nameof(Obstacle)}={Obstacle}, {nameof(ObstacleHeight)}={ObstacleHeight.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(NumberOfRaces)}={NumberOfRaces.ToString()}, {nameof(Distance)}={Distance}, {nameof(StartTime)}={StartTime.ToString()}, {nameof(WinningBetPrice)}={WinningBetPrice.ToString()}, {nameof(HorseList)}={HorseList}}}";
+        }
+
+        public double getStaduimCapacity()
+        {
+            double capacity = 80000;
+
+            return capacity;
         }
     }
 }
