@@ -24,8 +24,8 @@ namespace CA1_WebFrameWorks
 
         public User() 
         {
-            this.name = "Toby";
-            this.email = "toby@gmail.com";
+            this.name = "Randy";
+            this.email = "randy@gmail.com";
             this.password = "123";
             this.id=1;
         }

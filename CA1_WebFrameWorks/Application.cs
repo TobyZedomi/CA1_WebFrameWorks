@@ -88,17 +88,17 @@ namespace CA1_WebFrameWorks
 
            
 
-            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", DateTime.Now, "Royal Ascot", "Ireland", 5, "25 miles", DateTime.Now, 50, getHorse("horseFileEndure.txt")));
-            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", DateTime.Now, "Dubai World Cup", "Dubai", 7, "8 miles", DateTime.Now, 100, getHorse("horseFileEndure.txt")));
-            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", DateTime.Now, "Grand National", "England", 3, "40 miles", DateTime.Now, 300, getHorse("horseFileEndure.txt")));
+            comp.addEvent(new EnduranceRacing(raceGroup.ProgressiveTrailRides, true, "fence", new DateTime(16 / 10 / 2024), "Royal Ascot", "Ireland", 5, "25 miles", new DateTime(11 / 11 / 2023), 50, getHorse("horseFileEndure.txt")));
+            comp.addEvent(new EnduranceRacing(raceGroup.PleasureRides, true, "Hurdles", new DateTime(08 / 12 / 2022), "Dubai World Cup", "Dubai", 7, "8 miles", new DateTime(23 / 10 / 2021), 80, getHorse("horseFileEndure.txt")));
+            comp.addEvent(new EnduranceRacing(raceGroup.CompetetiveTrailRides, true, "Water Jump", new DateTime(04 / 01 / 2024), "Grand National", "England", 3, "40 miles", new DateTime(06 / 10 / 2020), 300, getHorse("horseFileEndure.txt")));
 
-            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", DateTime.Now, 70, getHorse("horseFileHarness.txt")));
-            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", DateTime.Now, 30, getHorse("horseFileHarness.txt")));
-            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", DateTime.Now, 50, getHorse("horseFileHarness.txt")));
+            comp.addEvent(new HarnessRacing("Race Bikes", "Trot", "Dubai World Cup", "Dubai", 5, "1.5 miles", new DateTime(15 / 12 / 2022), 70, getHorse("horseFileHarness.txt")));
+            comp.addEvent(new HarnessRacing("Jog Carts", "Walk", "Royal Ascot", "Ireland", 10, "1.5 miles", new DateTime(10 / 10 / 2021), 30, getHorse("horseFileHarness.txt")));
+            comp.addEvent(new HarnessRacing("Speed Carts", "Gallop", "Grand National", "England", 4, "1 mile", new DateTime(13 / 03 / 2023), 50, getHorse("horseFileHarness.txt")));
 
-            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", DateTime.Now, 40, getHorse("horseFileJump.txt")));
-            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", DateTime.Now, 55, getHorse("horseFileJump.txt")));
-            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", DateTime.Now, 120, getHorse("horseFileJump.txt")));
+            comp.addEvent(new JumpRacing("High Hurdle", "Hurdle", 0.5, "Dubai World Cup", "Dubai", 15, "2.5 miles", new DateTime(15 / 12 / 2024), 40, getHorse("horseFileJump.txt")));
+            comp.addEvent(new JumpRacing("Drop Fence", "Fence", 3, "Royal Ascot", "Ireland", 3, "4 miles", new DateTime(18 / 08 / 2019), 55, getHorse("horseFileJump.txt")));
+            comp.addEvent(new JumpRacing("Standard Water Jump", "Water", 1, "Grand National", "England", 6, "3.5 miles", new DateTime(27 / 10 / 2024), 120, getHorse("horseFileJump.txt")));
 
             int num = 0;
 
@@ -549,7 +549,7 @@ namespace CA1_WebFrameWorks
 
         }
 
-        // Refernece for this 
+        // Read horse file
         public static List<Horse> getHorse(string fileName)
         {
             //StreamReader sr = new StreamReader(@"C:\Users\tobyz\source\repos\CA1_WebFrameWorks\CA1_WebFrameWorks\horseFile.txt");
