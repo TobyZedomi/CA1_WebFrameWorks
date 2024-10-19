@@ -32,19 +32,34 @@ namespace CA1_WebFrameWorks
 
                 if (login.Equals("Register", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine("Enter name: ");
-                    string nameUser = Console.ReadLine();
 
-                    Console.WriteLine("Enter email: ");
-                    string emailOfUser = Console.ReadLine();
+                    Boolean repeat11 = false;
 
-                    Console.WriteLine("Enter password: ");
-                    string passwordForUser = Console.ReadLine();
+                    while (!repeat11)
+                    {
+                        try
+                        {
+                            Console.WriteLine("Enter name: ");
+                            string nameUser = Console.ReadLine();
 
-                    Console.WriteLine("Enter userId: ");
-                    int userId = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter email: ");
+                            string emailOfUser = Console.ReadLine();
 
-                    users.Add(new User(nameUser, emailOfUser, passwordForUser, userId));
+                            Console.WriteLine("Enter password: ");
+                            string passwordForUser = Console.ReadLine();
+
+                            Console.WriteLine("Enter userId: ");
+                            int userId = Convert.ToInt32(Console.ReadLine());
+
+                            users.Add(new User(nameUser, emailOfUser, passwordForUser, userId));
+                            repeat11 = true;
+                        }catch(Exception ex)
+                        {
+                            Console.WriteLine("UserID has to be a number");
+                            Console.WriteLine("");
+                            repeat11 = false;
+                        }
+                    }
 
                     result2 = false;
 
@@ -110,7 +125,7 @@ namespace CA1_WebFrameWorks
 
                 array[0] = "1. Get All Events";
                 array[1] = "2. Get All Events From Event Name";
-                array[2] = "3. Get All Horses From Event Name for particular Race";
+                array[2] = "3. Get All Horses From Event Name for particular Race (File)";
                 array[3] = "4. Get All Races From Race Name";
                 array[4] = "5. Add a horse to the list";
                 array[5] = "6. Add an event for a race";
